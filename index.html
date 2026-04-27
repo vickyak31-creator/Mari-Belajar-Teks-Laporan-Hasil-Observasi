@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar LHO – Teks Laporan Hasil Observasi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="blob-bg" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!-- LOGIN -->
+<div id="pg-login" class="page active">
+  <div class="login-center">
+    <div class="login-card">
+      <div class="login-logo">📖</div>
+      <p class="login-sub">Pembelajaran Bahasa Indonesia</p>
+      <h2>Masuk untuk Mulai Belajar</h2>
+      <div class="field-group">
+        <label class="field-label">Nama Peserta</label>
+        <input class="field-input" id="inp-user" type="text" placeholder="Ketik nama kamu..." maxlength="40" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+      <p class="err-msg" id="login-err">⚠️ Nama tidak boleh kosong!</p>
+      <p class="status-msg" id="status-msg"></p>
+      <button class="btn-primary" id="login-btn" onclick="doLogin()">Mulai Belajar 🚀</button>
+    </div>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="pg-home" class="page">
+  <div class="topbar">
+    <div class="logo-text">📖 Belajar LHO</div>
+    <div class="user-pill" id="user-display">👤 User</div>
+  </div>
+  <div class="hero-banner">
+    <div class="hero-deco"></div>
+    <div class="hero-deco2"></div>
+    <h1>Teks Laporan Hasil Observasi</h1>
+    <p>Pelajari materi LHO secara lengkap dan uji kemampuanmu dengan kuis interaktif!</p>
+  </div>
+  <div class="home-grid">
+    <div class="home-card" onclick="goTo('materi')">
+      <div class="hc-icon">📚</div>
+      <h3>Materi Lengkap</h3>
+      <p>Pengertian, ciri-ciri, struktur, tujuan, kaidah bahasa, contoh teks, dan langkah menulis LHO.</p>
+      <span class="hc-badge">8 Topik</span>
+    </div>
+    <div class="home-card" onclick="goTo('quiz')">
+      <div class="hc-icon">📝</div>
+      <h3>Kuis LHO</h3>
+      <p>Uji pemahamanmu dengan 15 soal acak. Lihat rankingmu di papan peringkat bersama!</p>
+      <span class="hc-badge">15 Soal</span>
+    </div>
+    <div class="home-card" onclick="goTo('ranking')">
+      <div class="hc-icon">🏆</div>
+      <h3>Papan Peringkat</h3>
+      <p>Lihat siapa yang mendapat skor tertinggi. Ranking diperbarui secara otomatis!</p>
+      <span class="hc-badge">Live</span>
+    </div>
+  </div>
+</div>
+
+<!-- MATERI -->
+<div id="pg-materi" class="page">
+  <div class="content-wrap">
+    <button class="back-btn" onclick="goTo('home')">← Kembali ke Beranda</button>
+    <h1 class="page-title">📚 Materi Teks LHO</h1>
+    <p class="page-desc">Pelajari semua topik sebelum mengerjakan kuis.</p>
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="showTab('pengertian',this)">Pengertian</button>
+      <button class="tab-btn" onclick="showTab('tujuan',this)">Tujuan</button>
+      <button class="tab-btn" onclick="showTab('ciri',this)">Ciri-Ciri</button>
+      <button class="tab-btn" onclick="showTab('struktur',this)">Struktur</button>
+      <button class="tab-btn" onclick="showTab('kaidah',this)">Kaidah Bahasa</button>
+      <button class="tab-btn" onclick="showTab('faktaopini',this)">Fakta &amp; Opini</button>
+      <button class="tab-btn" onclick="showTab('contoh',this)">Contoh Teks</button>
+      <button class="tab-btn" onclick="showTab('langkah',this)">Langkah Menulis</button>
+    </div>
+
+    <!-- PENGERTIAN -->
+    <div id="tab-pengertian" class="tab-panel active">
+      <div class="m-card">
+        <h3>📌 Definisi Teks LHO</h3>
+        <p>Teks Laporan Hasil Observasi (LHO) adalah jenis teks faktual yang menyajikan informasi secara <strong>objektif</strong>, <strong>sistematis</strong>, dan <strong>ilmiah</strong> berdasarkan hasil pengamatan langsung terhadap suatu objek, fenomena, atau lingkungan sekitar.</p>
+        <div class="callout callout-info">
+          <strong>Kata kunci:</strong> Faktual · Objektif · Sistematis · Berdasarkan Pengamatan Langsung · Ilmiah
+        </div>
+      </div>
+      <div class="m-card">
+        <h3>🔍 Pengertian Menurut Para Ahli</h3>
+        <ul>
+          <li><strong>Kosasih (2014):</strong> LHO adalah teks yang memuat penjabaran umum atau melaporkan sesuatu berupa hasil pengamatan.</li>
+          <li><strong>Kemendikbud (2013):</strong> LHO adalah teks yang berfungsi memberikan informasi tentang suatu objek setelah diadakan investigasi secara sistematis.</li>
+          <li><strong>Priyatni (2014):</strong> LHO merupakan tulisan berisi penjabaran umum dari hasil kegiatan mengobservasi atau mengamati suatu hal.</li>
+        </ul>
+      </div>
+      <div class="m-card">
+        <h3>🌟 4 Karakteristik Utama</h3>
+        <div class="feature-grid">
+          <div class="feat-item"><div class="feat-ic">⚖️</div><div><strong>Objektif</strong><p>Tidak mengandung opini atau perasaan pribadi penulis. Data disampaikan apa adanya.</p></div></div>
+          <div class="feat-item"><div class="feat-ic">✅</div><div><strong>Faktual</strong><p>Sesuai data lapangan yang dapat dibuktikan dan diverifikasi kebenarannya.</p></div></div>
+          <div class="feat-item"><div class="feat-ic">🌍</div><div><strong>Universal</strong><p>Berlaku umum untuk semua orang, bukan pengalaman pribadi semata.</p></div></div>
+          <div class="feat-item"><div class="feat-ic">📋</div><div><strong>Terstruktur</strong><p>Disusun dalam urutan sistematis dari umum ke khusus.</p></div></div>
+        </div>
+      </div>
+      <div class="m-card">
+        <h3>🎯 Contoh Objek yang Bisa Diamati</h3>
+        <div class="tag-wrap">
+          <span class="tag">🏫 Ruang kelas</span><span class="tag">📚 Perpustakaan</span>
+          <span class="tag">🌳 Taman sekolah</span><span class="tag">🐱 Hewan peliharaan</span>
+          <span class="tag">🌺 Tumbuhan</span><span class="tag">🌊 Ekosistem sungai</span>
+          <span class="tag">🏪 Kantin sekolah</span><span class="tag">🌤️ Cuaca</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TUJUAN -->
+    <div id="tab-tujuan" class="tab-panel">
+      <div class="m-card">
+        <h3>🎯 Tujuan Penulisan Teks LHO</h3>
+        <p>Teks LHO memiliki lima tujuan utama yang membedakannya dari jenis teks lainnya:</p>
+      </div>
+      <div class="nc-list">
+        <div class="nc-item"><div class="nc-num">1</div><div class="nc-body"><h4>Menyampaikan Informasi Berdasarkan Fakta</h4><p>Memberikan informasi nyata yang ditemukan di lapangan, bukan opini atau khayalan.</p><div class="callout callout-warn"><strong>Salah:</strong> "Taman sangat indah." (Opini)<br><strong>Benar:</strong> "Taman memiliki 15 pohon dengan tinggi rata-rata 3 meter." (Fakta)</div></div></div>
+        <div class="nc-item"><div class="nc-num">2</div><div class="nc-body"><h4>Memberikan Gambaran Detail Suatu Objek</h4><p>Mendeskripsikan objek lengkap agar pembaca bisa memahami tanpa perlu melihat langsung.</p></div></div>
+        <div class="nc-item"><div class="nc-num">3</div><div class="nc-body"><h4>Menyajikan Data Secara Ilmiah dan Sistematis</h4><p>Disusun seperti laporan penelitian sederhana menggunakan bahasa keilmuan yang runtut dan objektif.</p></div></div>
+        <div class="nc-item"><div class="nc-num">4</div><div class="nc-body"><h4>Mendokumentasikan Hasil Pengamatan</h4><p>Menyimpan data pengamatan dalam bentuk tulisan yang bisa dibaca dan digunakan kembali.</p></div></div>
+        <div class="nc-item"><div class="nc-num">5</div><div class="nc-body"><h4>Melatih Kemampuan Observasi</h4><p>Melatih kemampuan mengamati, mencatat, menganalisis, dan menyajikan informasi secara tertulis.</p></div></div>
+      </div>
+    </div>
+
+    <!-- CIRI -->
+    <div id="tab-ciri" class="tab-panel">
+      <div class="m-card">
+        <h3>📋 Ciri-Ciri Teks LHO</h3>
+        <p>Teks LHO memiliki ciri khas yang membedakannya dari teks narasi, deskripsi, atau argumentasi.</p>
+      </div>
+      <div class="m-card"><h3>1. Objektif dan Faktual</h3><p>Isi teks berupa fakta yang dapat dibuktikan. Penulis tidak boleh memasukkan pandangan pribadi.</p><div class="compare-wrap"><div class="cmp-wrong"><div class="cmp-lbl bad">❌ Tidak Sesuai</div><p>"Sekolah kami sangat bagus dan nyaman."</p></div><div class="cmp-right"><div class="cmp-lbl good">✅ Sesuai</div><p>"Sekolah memiliki 12 ruang kelas, 1 lab IPA, dan 1 perpustakaan."</p></div></div></div>
+      <div class="m-card"><h3>2. Bahasa Baku dan Ilmiah</h3><p>Menggunakan bahasa Indonesia baku sesuai PUEBI dan istilah teknis yang relevan.</p><div class="compare-wrap"><div class="cmp-wrong"><div class="cmp-lbl bad">❌ Tidak Baku</div><p>"Kayaknya ekosistemnya keren banget."</p></div><div class="cmp-right"><div class="cmp-lbl good">✅ Bahasa Baku</div><p>"Ekosistem tersebut mendukung keberagaman flora dan fauna."</p></div></div></div>
+      <div class="m-card"><h3>3. Disusun Sistematis</h3><p>Teks disusun urut dan logis dari hal umum ke khusus (deduktif) mengikuti struktur baku LHO.</p></div>
+      <div class="m-card"><h3>4. Data Terukur dan Spesifik</h3><p>Data berupa angka, ukuran, jumlah, atau kualitas yang dapat diukur dan diverifikasi.</p><div class="callout callout-info"><strong>Contoh data terukur:</strong><br>• "Ruang kelas berukuran 8 × 9 meter" (bukan "ruang yang luas")<br>• "Pohon mahoni setinggi 7 meter" (bukan "pohon yang tinggi")<br>• "Terdapat 36 meja dan 36 kursi" (bukan "banyak meja")</div></div>
+      <div class="m-card"><h3>5. Tidak Mengandung Opini Pribadi</h3>
+        <table class="data-table">
+          <thead><tr><th>Kata Opini (Hindari)</th><th>Alternatif Faktual</th></tr></thead>
+          <tbody>
+            <tr><td>"Sangat indah"</td><td>Deskripsikan bentuk/warna secara objektif</td></tr>
+            <tr><td>"Menurut saya..."</td><td>Sajikan data yang dapat diukur</td></tr>
+            <tr><td>"Sepertinya..."</td><td>Tulis fakta yang sudah diverifikasi</td></tr>
+            <tr><td>"Kayaknya..."</td><td>Cantumkan angka dan ukuran nyata</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- STRUKTUR -->
+    <div id="tab-struktur" class="tab-panel">
+      <div class="m-card"><h3>🏗️ Struktur Teks LHO</h3><p>Teks LHO memiliki tiga bagian utama yang harus disusun secara urut.</p></div>
+      <div class="struktur-flow">
+        <div class="sf-item c1"><div class="sf-n">1</div><div class="sf-b"><h4>Pernyataan Umum (Klasifikasi)</h4><p>Pembuka yang memperkenalkan objek secara umum: definisi, klasifikasi, atau gambaran umum objek.</p><div class="callout callout-info"><strong>Contoh:</strong> "Kupu-kupu adalah serangga dari ordo Lepidoptera yang dikenal karena sayapnya yang berwarna-warni."</div></div></div>
+        <div class="sf-arrow">↓</div>
+        <div class="sf-item c2"><div class="sf-n">2</div><div class="sf-b"><h4>Deskripsi Bagian</h4><p>Isi utama teks: rincian objek secara detail mencakup bagian-bagian, karakteristik fisik, perilaku, habitat, dan sifat-sifat objek.</p><div class="callout callout-info"><strong>Contoh:</strong> "Sayap kupu-kupu terdiri atas empat helai yang ditutupi sisik-sisik kecil berbentuk pipih..."</div></div></div>
+        <div class="sf-arrow">↓</div>
+        <div class="sf-item c3"><div class="sf-n">3</div><div class="sf-b"><h4>Deskripsi Manfaat / Simpulan</h4><p>Penutup yang menyimpulkan hasil pengamatan dan menjelaskan fungsi atau manfaat objek bagi kehidupan.</p><div class="callout callout-info"><strong>Contoh:</strong> "Kupu-kupu memiliki peran penting sebagai penyerbuk tanaman sehingga mendukung ekosistem dan pertanian."</div></div></div>
+      </div>
+      <div class="m-card" style="margin-top:14px"><h3>📌 Catatan Penting</h3><ul><li><strong>Urutan tidak boleh dibalik</strong> – Selalu mulai dari umum → detail → manfaat.</li><li><strong>Setiap bagian harus terhubung</strong> – Pernyataan umum mendukung deskripsi, keduanya mendukung simpulan.</li><li><strong>Satu paragraf, satu ide pokok.</strong></li></ul></div>
+    </div>
+
+    <!-- KAIDAH BAHASA -->
+    <div id="tab-kaidah" class="tab-panel">
+      <div class="m-card"><h3>📝 Kaidah Kebahasaan Teks LHO</h3><p>Aturan penggunaan bahasa khas dalam teks LHO agar terlihat ilmiah dan profesional.</p></div>
+      <div class="m-card"><h3>1. Kalimat Definisi</h3><p>Menyatakan pengertian atau batasan suatu konsep. Pola: <em>X adalah Y</em> atau <em>X merupakan Y</em>.</p><div class="callout callout-info">• "Fotosintesis adalah proses pembuatan makanan oleh tumbuhan menggunakan cahaya matahari."<br>• "Ekosistem merupakan sistem ekologi yang terbentuk dari hubungan makhluk hidup dan lingkungannya."</div></div>
+      <div class="m-card"><h3>2. Kalimat Deskripsi</h3><p>Menggambarkan ciri-ciri fisik, sifat, atau keadaan suatu objek secara detail dan terukur.</p><div class="callout callout-info">• "Batang pohon mangga berbentuk silindris dengan diameter rata-rata 30–50 cm."<br>• "Perpustakaan berukuran 10 × 12 meter dan memiliki 500 judul buku."</div></div>
+      <div class="m-card"><h3>3. Verba Relasional</h3><p>Kata kerja yang menghubungkan subjek dengan deskripsinya.</p><div class="tag-wrap"><span class="tag">adalah</span><span class="tag">merupakan</span><span class="tag">memiliki</span><span class="tag">terdiri atas</span><span class="tag">termasuk</span><span class="tag">mengandung</span></div></div>
+      <div class="m-card"><h3>4. Istilah Ilmiah dan Teknis</h3><div class="tag-wrap"><span class="tag">ekosistem</span><span class="tag">habitat</span><span class="tag">fotosintesis</span><span class="tag">metamorfosis</span><span class="tag">simbiosis</span><span class="tag">predator</span><span class="tag">herbivora</span><span class="tag">klorofil</span></div></div>
+      <div class="m-card"><h3>5. Konjungsi Logis</h3>
+        <table class="data-table">
+          <thead><tr><th>Fungsi</th><th>Konjungsi</th></tr></thead>
+          <tbody>
+            <tr><td>Penambahan</td><td>selain itu, di samping itu, lebih lanjut, adapun</td></tr>
+            <tr><td>Akibat</td><td>sehingga, oleh karena itu, dengan demikian, akibatnya</td></tr>
+            <tr><td>Pertentangan</td><td>namun, akan tetapi, meskipun demikian</td></tr>
+            <tr><td>Penjelas</td><td>yaitu, yakni, misalnya, contohnya</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAKTA OPINI -->
+    <div id="tab-faktaopini" class="tab-panel">
+      <div class="m-card"><h3>⚖️ Membedakan Fakta dan Opini</h3><p>Kemampuan membedakan fakta dan opini adalah kunci dalam menulis dan membaca teks LHO.</p></div>
+      <div class="m-card">
+        <h3>📊 Perbandingan Fakta vs Opini</h3>
+        <table class="data-table">
+          <thead><tr><th>Aspek</th><th>Fakta</th><th>Opini</th></tr></thead>
+          <tbody>
+            <tr><td>Definisi</td><td>Pernyataan yang terjadi dan dapat dibuktikan</td><td>Pandangan subjektif seseorang</td></tr>
+            <tr><td>Sifat</td><td>Objektif, terukur, universal</td><td>Subjektif, relatif, berbeda tiap orang</td></tr>
+            <tr><td>Pembuktian</td><td>Bisa dibuktikan dengan data/angka</td><td>Tidak bisa dibuktikan secara empiris</td></tr>
+            <tr><td>Ciri bahasa</td><td>Angka, ukuran, waktu, lokasi</td><td>bagus, jelek, menurut saya, kayaknya</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="m-card"><h3>✅ Contoh Kalimat Fakta</h3><ul>
+        <li>"Ruang kelas XII IPA 1 memiliki luas 72 m² dan dilengkapi 2 unit AC."</li>
+        <li>"Pohon beringin berusia sekitar 50 tahun dengan tinggi ±15 meter."</li>
+        <li>"Perpustakaan buka Senin–Jumat pukul 07.00–15.00 WIB."</li>
+        <li>"Suhu rata-rata kelas pada siang hari berkisar 28–32°C."</li>
+      </ul></div>
+      <div class="m-card"><h3>❌ Contoh Kalimat Opini</h3><ul>
+        <li>"Taman sekolah kami adalah yang paling indah di kota ini." (superlatif subjektif)</li>
+        <li>"Menurut saya, perpustakaan ini kurang nyaman." (pendapat pribadi)</li>
+        <li>"Sepertinya kelas punya lebih dari 30 meja." (perkiraan)</li>
+        <li>"Kayaknya tanamannya sudah tua." (bahasa tidak baku + perkiraan)</li>
+      </ul></div>
+      <div class="m-card"><h3>🔄 Latihan: Opini → Fakta</h3>
+        <table class="data-table">
+          <thead><tr><th>Kalimat Opini</th><th>Diubah Menjadi Fakta</th></tr></thead>
+          <tbody>
+            <tr><td>"Kelasnya sangat besar."</td><td>"Ruang kelas berukuran 9 × 8 meter."</td></tr>
+            <tr><td>"Banyak sekali bukunya."</td><td>"Perpustakaan memiliki 1.250 koleksi buku."</td></tr>
+            <tr><td>"Pohonnya sangat tinggi."</td><td>"Pohon tersebut memiliki tinggi ±12 meter."</td></tr>
+            <tr><td>"Hewan itu sangat unik."</td><td>"Bunglon dapat mengubah warna kulitnya dalam 0,3 detik."</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CONTOH TEKS -->
+    <div id="tab-contoh" class="tab-panel">
+      <div class="m-card"><h3>📄 Contoh Teks LHO – Ruang Kelas</h3>
+        <div class="contoh-wrap">
+          <div class="contoh-bag b1"><div class="bag-lbl">Pernyataan Umum</div><p>Ruang kelas merupakan salah satu fasilitas utama dalam lingkungan sekolah yang berfungsi sebagai tempat berlangsungnya proses pembelajaran. Ruang kelas yang baik harus memenuhi standar kenyamanan, pencahayaan, dan ventilasi yang memadai agar mendukung konsentrasi dan efektivitas belajar siswa.</p></div>
+          <div class="contoh-bag b2"><div class="bag-lbl">Deskripsi Bagian</div><p>Ruang kelas XII IPA 1 berukuran 9 × 8 meter dengan luas total 72 m² dan mampu menampung 36 siswa. Setiap siswa dilengkapi satu set meja dan kursi dari kayu berukuran 60 × 40 cm. Di depan kelas terdapat satu papan tulis putih berukuran 240 × 120 cm dan meja guru. Kelas memiliki 6 jendela kaca berukuran 80 × 100 cm untuk sirkulasi udara, serta 2 unit kipas angin di langit-langit ketinggian 3 meter.</p></div>
+          <div class="contoh-bag b3"><div class="bag-lbl">Deskripsi Manfaat</div><p>Ruang kelas dirancang untuk memenuhi kebutuhan belajar siswa secara optimal. Ukuran yang memadai, ventilasi baik, serta kelengkapan sarana mendukung terciptanya suasana belajar yang kondusif sehingga diharapkan prestasi akademik siswa dapat meningkat.</p></div>
+        </div>
+      </div>
+      <div class="m-card"><h3>📄 Contoh Teks LHO – Perpustakaan Sekolah</h3>
+        <div class="contoh-wrap">
+          <div class="contoh-bag b1"><div class="bag-lbl">Pernyataan Umum</div><p>Perpustakaan sekolah adalah fasilitas penunjang pendidikan yang menyediakan berbagai sumber informasi berupa buku, majalah, jurnal, dan media lainnya untuk mendukung kegiatan belajar mengajar.</p></div>
+          <div class="contoh-bag b2"><div class="bag-lbl">Deskripsi Bagian</div><p>Perpustakaan SMP Harapan Bangsa terletak di lantai dua gedung utama dengan luas 120 m². Perpustakaan ini memiliki 3.450 judul buku: 1.200 buku pelajaran, 950 buku fiksi, 800 buku iptek, dan 500 ensiklopedia. Terdapat 24 rak besi dalam 6 baris, 20 meja baca dengan 40 kursi, 3 unit komputer katalog digital, dan 1 unit AC yang menjaga suhu 22–24°C.</p></div>
+          <div class="contoh-bag b3"><div class="bag-lbl">Deskripsi Manfaat</div><p>Perpustakaan memiliki peran strategis dalam mendukung budaya literasi warga sekolah. Dengan koleksi yang lengkap, perpustakaan menjadi pusat sumber belajar yang efektif. Data kunjungan 2023/2024 menunjukkan peningkatan minat baca siswa sebesar 25%.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANGKAH MENULIS -->
+    <div id="tab-langkah" class="tab-panel">
+      <div class="m-card"><h3>📋 Langkah Menyusun Teks LHO</h3><p>Ikuti langkah-langkah berikut secara urut untuk menghasilkan teks LHO yang baik dan benar.</p></div>
+      <div class="nc-list">
+        <div class="nc-item"><div class="nc-num">1</div><div class="nc-body"><h4>Menentukan Objek Pengamatan</h4><p>Pilih objek spesifik, nyata, dan dapat diamati langsung. Pilih yang dekat dengan lingkungan sekolah.</p></div></div>
+        <div class="nc-item"><div class="nc-num">2</div><div class="nc-body"><h4>Membuat Rencana Pengamatan</h4><p>Tentukan aspek yang diamati, alat yang dibutuhkan (penggaris, kamera), dan waktu pelaksanaan.</p></div></div>
+        <div class="nc-item"><div class="nc-num">3</div><div class="nc-body"><h4>Melakukan Observasi Langsung</h4><p>Turun ke lapangan dan gunakan seluruh indera untuk mendapatkan data lengkap dan akurat.</p></div></div>
+        <div class="nc-item"><div class="nc-num">4</div><div class="nc-body"><h4>Mencatat Data Secara Sistematis</h4><p>Catat ukuran, jumlah, warna, fungsi, kondisi, dan detail lainnya. Jangan andalkan ingatan!</p><div class="callout callout-warn"><strong>Penting:</strong> Catat data langsung di lapangan!</div></div></div>
+        <div class="nc-item"><div class="nc-num">5</div><div class="nc-body"><h4>Mengelompokkan dan Menganalisis Data</h4><p>Pisahkan data berdasarkan kategori: fisik, fungsi, kondisi. Analisis pola dan hubungan antar data.</p></div></div>
+        <div class="nc-item"><div class="nc-num">6</div><div class="nc-body"><h4>Membuat Kerangka Teks</h4><p>Susun outline: Pernyataan Umum → Deskripsi Bagian (sub-topik) → Deskripsi Manfaat/Simpulan.</p></div></div>
+        <div class="nc-item"><div class="nc-num">7</div><div class="nc-body"><h4>Menyusun Teks LHO</h4><p>Tulis teks sesuai struktur dan kaidah. Gunakan bahasa baku, data spesifik, hindari opini subjektif.</p></div></div>
+        <div class="nc-item"><div class="nc-num">8</div><div class="nc-body"><h4>Menyunting dan Merevisi</h4><p>Baca ulang, periksa ejaan, tanda baca, keakuratan data, dan kesesuaian struktur. Hapus opini.</p></div></div>
+      </div>
+      <div class="m-card"><h3>💡 Tips Menulis LHO yang Baik</h3><ul>
+        <li>Gunakan bahasa baku, objektif, dan deskriptif.</li>
+        <li>Cantumkan data spesifik dan terukur: angka, ukuran, waktu, jumlah.</li>
+        <li>Susun dari umum ke khusus agar mudah dipahami pembaca.</li>
+        <li>Hindari kata yang mengungkapkan perasaan atau penilaian subjektif.</li>
+        <li>Gunakan konjungsi yang tepat untuk menghubungkan kalimat dan paragraf.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="pg-quiz" class="page">
+  <div class="quiz-wrap">
+    <button class="back-btn" onclick="confirmBack()">← Kembali</button>
+    <div class="quiz-topbar">
+      <span class="q-prog-lbl" id="q-prog">Soal 1 dari 15</span>
+      <span class="q-score-lbl" id="q-sc-lbl">Benar: 0</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill" id="q-bar" style="width:0%"></div></div>
+    <div class="quiz-card">
+      <p class="q-num" id="q-num">Pertanyaan 1</p>
+      <p class="q-text" id="q-text">Memuat soal...</p>
+      <div class="q-opts" id="q-opts"></div>
+      <div class="q-feedback" id="q-fb"></div>
+      <button class="q-next-btn" id="q-next" onclick="nextQ()">Soal Berikutnya →</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULT -->
+<div id="pg-result" class="page">
+  <div class="result-card">
+    <div class="result-emoji" id="r-emoji">🎉</div>
+    <h2 id="r-title">Kuis Selesai!</h2>
+    <div class="result-big-score" id="r-score">0 <span>/ 100</span></div>
+    <p class="result-sub" id="r-msg">Bagus sekali!</p>
+    <div class="result-stats">
+      <div class="r-row"><span>Nama</span><span id="r-name">-</span></div>
+      <div class="r-row"><span>Jawaban Benar</span><span id="r-correct">0 / 15</span></div>
+      <div class="r-row"><span>Jawaban Salah</span><span id="r-wrong">0</span></div>
+      <div class="r-row"><span>Waktu</span><span id="r-dur">-</span></div>
+    </div>
+    <div class="rank-box">
+      <div class="rank-box-title">🏆 Papan Peringkat</div>
+      <div class="rank-hdr-row"><span>Pos</span><span>Nama</span><span>Skor</span><span>Durasi</span></div>
+      <div id="rank-list"><div class="rank-loading">Memuat ranking...</div></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-outline" onclick="goTo('ranking')">📊 Ranking Lengkap</button>
+      <button class="btn-primary" onclick="goTo('quiz')">🔄 Ulangi Kuis</button>
+    </div>
+    <button class="btn-ghost" onclick="goTo('home')">🏠 Kembali ke Beranda</button>
+  </div>
+</div>
+
+<!-- RANKING PAGE -->
+<div id="pg-ranking" class="page">
+  <div class="content-wrap" style="max-width:580px">
+    <button class="back-btn" onclick="goTo('home')">← Kembali ke Beranda</button>
+    <h1 class="page-title">🏆 Papan Peringkat</h1>
+    <p class="page-desc">Semua peserta yang telah menyelesaikan kuis LHO.</p>
+    <div class="rank-full-wrap" id="rank-full-wrap"><div class="rank-loading">Memuat data...</div></div>
+    <div style="text-align:center;margin-top:14px">
+      <button class="btn-outline" onclick="loadFullRanking()">🔄 Perbarui Data</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN OVERLAY -->
+<div id="admin-overlay" class="admin-overlay">
+  <div class="admin-panel">
+    <div class="admin-hdr">
+      <span>🛡️ Panel Admin – Belajar LHO</span>
+      <button class="admin-x" onclick="closeAdmin()">✕</button>
+    </div>
+    <div class="admin-stats-row">
+      <div class="a-stat"><div class="a-num" id="a-n-login">-</div><div class="a-lbl">Total Login</div></div>
+      <div class="a-stat"><div class="a-num" id="a-n-kuis">-</div><div class="a-lbl">Kuis Selesai</div></div>
+      <div class="a-stat"><div class="a-num" id="a-n-avg">-</div><div class="a-lbl">Rata-rata Skor</div></div>
+    </div>
+    <div class="a-sec-title">📋 Riwayat Login Peserta</div>
+    <div class="a-tbl-wrap"><table class="a-tbl">
+      <thead><tr><th>#</th><th>Nama</th><th>Waktu Login</th></tr></thead>
+      <tbody id="a-login-tbody"></tbody>
+    </table></div>
+    <div class="a-sec-title" style="margin-top:16px">🏆 Leaderboard Lengkap</div>
+    <div class="a-tbl-wrap"><table class="a-tbl">
+      <thead><tr><th>Pos</th><th>Nama</th><th>Skor</th><th>Durasi</th><th>Waktu</th></tr></thead>
+      <tbody id="a-lb-tbody"></tbody>
+    </table></div>
+    <div style="margin-top:14px;text-align:right">
+      <button class="a-clear-btn" onclick="clearAllData()">🗑️ Hapus Semua Data</button>
+    </div>
+    <div class="a-hint">Buka panel: <kbd>Ctrl+Shift+A</kbd> · Password: <kbd>guru123</kbd></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
